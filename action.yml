@@ -1,0 +1,18 @@
+name: localization-drift
+description: Fail when customer-visible text bypasses translation keys.
+inputs:
+  args:
+    description: Extra arguments for the audit.
+    required: false
+    default: ""
+runs:
+  using: composite
+  steps:
+    - name: Install
+      shell: bash
+      run: npm ci --prefix "${{ github.action_path }}" --no-audit --no-fund
+    - name: Audit localization
+      shell: bash
+      env:
+        INPUT_ARGS: ${{ inputs.args }}
+      run: node "${{ github.action_path }}/src/cli.mjs" $INPUT_ARGS

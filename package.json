@@ -1,0 +1,45 @@
+{
+  "name": "localization-drift",
+  "version": "0.1.0",
+  "description": "Fail a build when customer-visible text bypasses translation keys.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m1chlcz/localization-drift.git"
+  },
+  "homepage": "https://github.com/m1chlcz/localization-drift",
+  "bugs": "https://github.com/m1chlcz/localization-drift/issues",
+  "keywords": [
+    "i18n",
+    "localization",
+    "translation",
+    "lint",
+    "typescript",
+    "react",
+    "jsx",
+    "github-action"
+  ],
+  "bin": {
+    "localization-drift": "src/cli.mjs"
+  },
+  "exports": {
+    ".": "./src/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "action.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "typescript": "6.0.3"
+  }
+}
