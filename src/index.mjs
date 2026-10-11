@@ -148,7 +148,6 @@ export async function scanRepository(root, config = {}) {
       if (excludedPath(path, settings.exclude)) continue;
       const source = await readFile(absolute, "utf8");
       findings.push(...analyzeSource(path, source, {
-        checkJSX: settings.extensions.includes(extname(path)) && path.endsWith(".tsx"),
         attributes: settings.attributes,
         forbidden: settings.forbidden,
         allowComment: settings.allowComment,
